@@ -30,7 +30,7 @@ const firebaseConfig = {
 
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./proyecto-final-9469a-firebase-adminsdk-o1d2x-f4c857b006");
+var serviceAccount = require("/etc/secrets/proyecto-final-9469a-firebase-adminsdk-o1d2x-f4c857b006");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
