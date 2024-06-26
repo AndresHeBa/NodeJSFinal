@@ -14,7 +14,7 @@ app.use(cors({
 }));
 
 /* GET home page. */
-app.get('*', (req, res) {
+app.get('*', (req, res) => {
   res.sendFile(process.cwd() + '/public/index.html');
 });
 
