@@ -13,8 +13,6 @@ app.use(cors({
     origin: 'https://nodejsfinal-1jyh.onrender.com',
 }));
 
-app.use(express.static(process.cwd() + '/public/'))
-
 /* GET home page. */
 router.get('/', function(req, res) {
   res.sendFile(process.cwd() + '/public/index.html');
