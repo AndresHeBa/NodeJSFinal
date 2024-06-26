@@ -12,6 +12,13 @@ app.use(cors({
     origin: 'https://nodejsfinal-1jyh.onrender.com',
 }));
 
+app.use(express.static(process.cwd() + '/public/'))
+
+/* GET home page. */
+router.get('/', function(req, res) {
+  res.sendFile(process.cwd() + '/public/index.html');
+});
+
 // Import the functions you need from the SDKs you need
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
