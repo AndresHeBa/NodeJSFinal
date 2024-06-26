@@ -26,40 +26,7 @@ const firebaseConfig = {
   appId: "1:668310300478:web:496f38b2c0a04726842e6f"
 };
 
-// Initialize Firebase
 
-var admin = require("firebase-admin");
-
-var serviceAccount = require("etc/secrets/proyecto-final-9469a-firebase-adminsdk-o1d2x-f4c857b006.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-
-const db = getFirestore();
-
-console.log(db)
-
-
-app.post('/database', async (req, res) => {
-    console.log(req.body)
-    const { correo } = req.body;
-    const userRef = db.collection('users');
-    const user = userRef.where('email', '==', correo);
-    const doc = await user.get();
-    if (doc.empty) {
-    console.log('El documento no existe');
-    console.log(correo)
-    return;
-    } 
-    let id = '';
-    doc.forEach(doc => {
-        id = doc.id;
-        console.log(doc.id, '=>', doc.data());
-    });
-    res.json(id)
-})
 
 
 
