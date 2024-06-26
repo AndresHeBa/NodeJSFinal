@@ -1,4 +1,5 @@
 const express = require("express"); //importar express 
+const router = express.Router();
 const bodyParser = require("body-parser"); 
 const nodemailer = require('nodemailer');
 const cors = require('cors');
