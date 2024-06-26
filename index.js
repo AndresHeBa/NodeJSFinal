@@ -8,7 +8,9 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended:true})); 
 app.use(bodyParser.json()); 
-app.use(cors());
+app.use(cors({
+    origin: 'https://nodejsfinal-1jyh.onrender.com',
+}));
 
 // Import the functions you need from the SDKs you need
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
@@ -132,6 +134,9 @@ app.post('/cita', (req, res) => {
         }
     });
 });
+
+app.use(express.static(process.cwd() + '/public'));
+
 
 app.listen(port, () => { 
     console.log(`Servidor ejecutandose en http://localhost:${port}`); 
