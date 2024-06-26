@@ -14,7 +14,7 @@ app.use(cors({
 }));
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('*', function(req, res) {
   res.sendFile(process.cwd() + '/public/index.html');
 });
 
