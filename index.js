@@ -37,7 +37,7 @@ const serviceAccount = {
   'token_uri': 'https://oauth2.googleapis.com/token',
   'auth_provider_x509_cert_url': process.env.FIREBASE_ADMIN_AUTH_PROVIDER_X509_CERT_URL,
   'client_x509_cert_url': process.env.FIREBASE_ADMIN_CLIENT_X509_CERT_URL,
-} as ServiceAccount;
+};
 
 
 // Initialize Firebase
